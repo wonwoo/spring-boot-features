@@ -1,0 +1,5 @@
+CREATE TABLE CUSTOMER (
+  id         INTEGER IDENTITY PRIMARY KEY,
+  name VARCHAR(30),
+  address  VARCHAR(256)
+);
