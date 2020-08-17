@@ -8,13 +8,13 @@ import org.springframework.boot.context.properties.bind.Name;
 @ConfigurationProperties("sample")
 public class SampleProperties {
 
-    private final String index;
+    private final String clazz;
 
-    public SampleProperties(@Name("name") String index) {
-        this.index = index;
+    public SampleProperties(@Name("class") String clazz) {
+        this.clazz = clazz;
     }
 
-    public String getIndex() {
-        return index;
+    public String getClazz() {
+        return clazz;
     }
 }

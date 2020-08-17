@@ -18,6 +18,6 @@ class PropertiesNameApplicationTests {
 
     @Test
     void contextLoads() {
-        assertThat(sampleProperties.getIndex()).isEqualTo("wonwoo");
+        assertThat(sampleProperties.getClazz()).isEqualTo("wonwoo");
     }
 }
