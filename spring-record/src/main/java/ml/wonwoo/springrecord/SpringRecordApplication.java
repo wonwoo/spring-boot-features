@@ -36,7 +36,6 @@ public class SpringRecordApplication {
                     """;
             jdbcTemplate.update(sql, "wonwoo", 20);
             jdbcTemplate.update(sql, "fidel", 14);
-
             List<Customer> customers = jdbcTemplate.query("select * from customer", new DataClassRowMapper<>(Customer.class));
             System.out.println(customers);
         };
