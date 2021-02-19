@@ -29,14 +29,20 @@ public class SpringRecordApplication {
     @Bean
     CommandLineRunner jdbc(JdbcTemplate jdbcTemplate) {
         return args -> {
-            String sql = """
+            String insert = """
                     insert into 
                     customer(name, age) 
                     values(?,?)
                     """;
-            jdbcTemplate.update(sql, "wonwoo", 20);
-            jdbcTemplate.update(sql, "fidel", 14);
-            List<Customer> customers = jdbcTemplate.query("select * from customer", new DataClassRowMapper<>(Customer.class));
+            jdbcTemplate.update(insert, "wonwoo", 20);
+            jdbcTemplate.update(insert, "fidel", 14);
+            String select = """
+                    select 
+                        * 
+                    from 
+                        customer
+                    """;
+            List<Customer> customers = jdbcTemplate.query(select, new DataClassRowMapper<>(Customer.class));
             System.out.println(customers);
         };
     }
